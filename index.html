@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Astro Solution — Astrology Services</title>
+  <meta name="description" content="Astro Solution — Personalized astrology readings, horoscope reports, and guidance to help you navigate life." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Astro Solution" />
+  <meta property="og:description" content="Personalized astrology readings, horoscope reports, and guidance." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Astro+Solution" />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#f59e0b; --text:#e6eef8;
+      --muted:#9bb0d1; --glass: rgba(255,255,255,0.03);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#071024);color:var(--text);line-height:1.5}
+    .container{max-width:1000px;margin:30px auto;padding:20px}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#111827,#0b1220);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+    h1{margin:0;font-size:1.6rem}
+    p.lead{color:var(--muted);margin-top:6px}
+    .hero{display:grid;grid-template-columns:1fr;gap:18px;margin-top:18px;padding:18px;background:var(--glass);border-radius:12px}
+    .cta{margin-top:12px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{background:var(--accent);color:#08101a;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:18px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.03));padding:14px;border-radius:10px;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+    .service-title{font-weight:700;margin:0 0 6px 0}
+    .muted{color:var(--muted);font-size:0.95rem}
+    .about{display:flex;gap:14px;align-items:center}
+    .avatar{width:120px;height:120px;border-radius:12px;background:linear-gradient(135deg,#071024,#0b1220);display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--accent)}
+    footer{margin-top:24px;color:var(--muted);font-size:0.9rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+    .socials{display:flex;gap:10px;align-items:center}
+    a.social{color:var(--muted);text-decoration:none;border-radius:8px;padding:6px}
+    @media(min-width:760px){
+      .hero{grid-template-columns:1fr 360px}
+    }
+    .contact-form{display:flex;flex-direction:column;gap:8px}
+    .input,textarea{padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);outline:none}
+    textarea{min-height:100px;resize:vertical}
+    .testimonial{font-style:italic;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">AS</div>
+      <div>
+        <h1>Astro Solution</h1>
+        <div class="muted">Personalized astrology, horoscope readings & guidance</div>
+      </div>
+    </header>
+    <section class="hero">
+      <div>
+        <h2>Find clarity with expert astrology</h2>
+        <p class="lead">Accurate birth chart readings, career & relationship guidance, and monthly forecasts to help you make confident decisions.</p>
+        <div class="grid">
+          <div class="card">
+            <div class="service-title">Birth Chart Reading</div>
+            <div class="muted">In-depth analysis of your natal chart with remedies and timelines.</div>
+          </div>
+          <div class="card">
+            <div class="service-title">Love & Relationship</div>
+            <div class="muted">Compatibility checks, relationship guidance and match-making insights.</div>
+          </div>
+          <div class="card">
+            <div class="service-title">Career & Finance</div>
+            <div class="muted">Career timing, growth prospects, and financial planning through astrology.</div>
+          </div>
+          <div class="card">
+            <div class="service-title">Remedies & Rituals</div>
+            <div class="muted">Practical remedies, gemstones, and simple rituals tailored for you.</div>
+          </div>
+        </div>
+        <div class="cta">
+          <a class="btn" href="mailto:hello@astrosolution.com?subject=Astro%20Solution%20-%20Booking">Book a Reading</a>
+          <a class="btn ghost" href="https://wa.me/919876543210?text=Hi%20Astro%20Solution%20I%20want%20a%20reading" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          <a class="btn ghost" href="#contact">Contact</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div>© <span id="year"></span> Astro Solution</div>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
